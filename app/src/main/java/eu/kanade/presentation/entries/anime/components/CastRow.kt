@@ -232,6 +232,7 @@ fun CastRow(
                             textAlign = TextAlign.Center,
                             modifier = Modifier.padding(vertical = 2.dp)
                         )
+                    }
 
                     if (!credit.role.isNullOrBlank()) {
                         Text(

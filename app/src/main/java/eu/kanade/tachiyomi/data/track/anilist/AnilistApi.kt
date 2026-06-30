@@ -774,6 +774,8 @@ class AnilistApi(val client: OkHttpClient, interceptor: AnilistInterceptor) {
                                         ?.get("userPreferred")?.toString()?.trim('"')
                                     val charImage = node?.get("image")?.jsonObject
                                         ?.get("large")?.toString()?.trim('"')
+                                    // Extract the Main/Supporting role
+                                    val charRole = edge["role"]?.toString()?.trim('"')
                                     val vas = edge["voiceActors"]?.jsonArray
                                     val vaNames = mutableListOf<String>()
                                     var vaImage: String? = null
@@ -800,6 +802,7 @@ class AnilistApi(val client: OkHttpClient, interceptor: AnilistInterceptor) {
                                                 role = roleText.ifBlank { null },
                                                 character = charName,
                                                 image_url = finalImage,
+                                                roleType = charRole,
                                             ),
                                         )
                                     }

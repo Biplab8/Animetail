@@ -8,4 +8,5 @@ data class Credit(
     val role: String? = null,
     val character: String? = null,
     val image_url: String? = null,
+    val roleType: String? = null,
 )

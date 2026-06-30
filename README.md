@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://aniyomi.org">
-    <img src="./.github/assets/icon.png" alt="animetail logo" title="animetail logo" width="80"/>
+     <img src="./.github/assets/icon.png" alt="animetail logo" title="animetail logo" width="80"/>
 </a>
 
 # Animetail [App](#)

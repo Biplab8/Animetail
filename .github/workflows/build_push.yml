@@ -120,7 +120,7 @@ jobs:
         uses: DamianReeves/write-file-action@v1.2
         with:
           path: app/src/main/assets/client_secrets.json
-          contents: ${{ secrets.CLIENT_SECRETS_TEXT }}
+          contents: ${{ secrets.CLIENT_SECRETS_JSON }}
           write-mode: overwrite
 
       - name: Set up gradle

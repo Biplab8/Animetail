@@ -788,6 +788,7 @@ class AnilistApi(val client: OkHttpClient, interceptor: AnilistInterceptor) {
                                         }
                                     }
                                     val roleText = vaNames.joinToString(", ")
+                                    val charRole = edge["role"]?.toString()?.trim('"')
                                     var finalImage: String? = charImage ?: vaImage
                                     if (!finalImage.isNullOrBlank() && finalImage.startsWith("//")) {
                                         finalImage = "https:$finalImage"
@@ -799,6 +800,7 @@ class AnilistApi(val client: OkHttpClient, interceptor: AnilistInterceptor) {
                                                 role = roleText.ifBlank { null },
                                                 character = charName,
                                                 image_url = finalImage,
+                                                roleType = charRole,
                                             ),
                                         )
                                     }

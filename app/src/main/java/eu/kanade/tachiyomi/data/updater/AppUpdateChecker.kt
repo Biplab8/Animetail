@@ -43,9 +43,9 @@ class AppUpdateChecker {
 
 val GITHUB_REPO: String by lazy {
     if (isPreviewBuildType) {
-        "Animetailapp/animetail-preview"
+        "Biplab8/animetail-preview"
     } else {
-        "Animetailapp/Animetail"
+        "Biplab8/Animetail"
     }
 }
 

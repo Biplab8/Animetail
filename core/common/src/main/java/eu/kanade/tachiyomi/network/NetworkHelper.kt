@@ -129,14 +129,17 @@ class NetworkHelper(
         }
     }
 
+    // FIXED: Formed standard built instance first, then created standard client mirrors
+    private val baseCleanClient = clientBuilder.build()
+
     // Unified client that presents itself to both old and new extension structures safely
-    val defaultClient = clientBuilder
+    val defaultClient = baseCleanClient
         .newBuilder()
         .addNetworkInterceptor(dynamicGzipInterceptor)
         .build()
 
     // Primary application client with Cloudflare capabilities
-    val client = clientBuilder
+    val client = baseCleanClient
         .newBuilder()
         .addInterceptor(
             CloudflareInterceptor(context, cookieJar, preferences, scope) { defaultUserAgentProvider() },

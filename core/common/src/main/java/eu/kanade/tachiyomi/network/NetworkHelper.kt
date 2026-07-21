@@ -38,7 +38,7 @@ class NetworkHelper(
             .addInterceptor(UncaughtExceptionInterceptor())
             .addInterceptor(UserAgentInterceptor(::defaultUserAgentProvider))
             .addInterceptor(IgnoreGzipInterceptor())
-            .addNetworkInterceptor(BrotliInterceptor)
+            .addInterceptor(BrotliInterceptor)
             // TLMR -->
             .addInterceptor(FlareSolverrInterceptor(preferences))
         // <-- TLMR

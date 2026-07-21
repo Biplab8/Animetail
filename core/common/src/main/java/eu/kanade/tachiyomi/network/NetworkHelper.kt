@@ -14,6 +14,8 @@ import okhttp3.brotli.BrotliInterceptor
 import okhttp3.logging.HttpLoggingInterceptor
 import java.io.File
 import java.util.concurrent.TimeUnit
+import okhttp3.Interceptor
+import okhttp3.Response
 
 class NetworkHelper(
     private val context: Context,
@@ -23,7 +25,7 @@ class NetworkHelper(
 
     val cookieJar = AndroidCookieJar()
 
-    private val clientBuilder: OkHttpClient.Builder = run {
+    val clientBuilder: OkHttpClient.Builder = run {
         val builder = OkHttpClient.Builder()
             .cookieJar(cookieJar)
             .connectTimeout(30, TimeUnit.SECONDS)
@@ -37,7 +39,6 @@ class NetworkHelper(
             )
             .addInterceptor(UncaughtExceptionInterceptor())
             .addInterceptor(UserAgentInterceptor(::defaultUserAgentProvider))
-            .addNetworkInterceptor(IgnoreGzipInterceptor())
             .addNetworkInterceptor(BrotliInterceptor)
             // TLMR -->
             .addInterceptor(FlareSolverrInterceptor(preferences))
@@ -114,13 +115,35 @@ class NetworkHelper(
         }
     }
 
-    val nonCloudflareClient = clientBuilder.build()
+    // A smart bridge interceptor that intercepts the crash check for newer extensions
+    private val dynamicGzipInterceptor = Interceptor { chain ->
+        val request = chain.request()
+        val isAllMangaNew = request.url.host.contains("allmanga", ignoreCase = true)
+        
+        if (isAllMangaNew) {
+            // Bypass the Gzip rule entirely for modern extensions to prevent crashes
+            chain.proceed(request)
+        } else {
+            // Apply old Gzip rule handling to keep legacy extensions alive
+            IgnoreGzipInterceptor().intercept(chain)
+        }
+    }
 
+    // Unified client that presents itself to both old and new extension structures safely
+    val defaultClient = clientBuilder
+        .newBuilder()
+        .addNetworkInterceptor(dynamicGzipInterceptor)
+        .build()
+
+    // Primary application client with Cloudflare capabilities
     val client = clientBuilder
+        .newBuilder()
         .addInterceptor(
             CloudflareInterceptor(context, cookieJar, preferences, scope) { defaultUserAgentProvider() },
         )
         .build()
+
+    val nonCloudflareClient = defaultClient
 
     /**
      * @deprecated Since extension-lib 1.5

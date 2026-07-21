@@ -4,7 +4,7 @@
     <img src="./.github/assets/icon.png" alt="animetail logo" title="animetail logo" width="80"/>
 </a>
 
-# Animetail [App](#)
+# Animan [App](#)
 
 ### Full-featured player and reader, based on ~~Tachiyomi~~ Mihon.
 Discover and watch anime, cartoons, series, and more – easier than ever on your Android device.

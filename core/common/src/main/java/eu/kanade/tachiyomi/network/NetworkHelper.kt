@@ -3,12 +3,14 @@ package eu.kanade.tachiyomi.network
 import android.content.Context
 import eu.kanade.tachiyomi.network.interceptor.CloudflareInterceptor
 import eu.kanade.tachiyomi.network.interceptor.FlareSolverrInterceptor
+import eu.kanade.tachiyomi.network.interceptor.IgnoreGzipInterceptor
 import eu.kanade.tachiyomi.network.interceptor.UncaughtExceptionInterceptor
 import eu.kanade.tachiyomi.network.interceptor.UserAgentInterceptor
 import kotlinx.coroutines.CoroutineScope
 import okhttp3.Cache
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.OkHttpClient
+import okhttp3.brotli.BrotliInterceptor
 import okhttp3.logging.HttpLoggingInterceptor
 import java.io.File
 import java.util.concurrent.TimeUnit
@@ -117,6 +119,42 @@ class NetworkHelper(
             CloudflareInterceptor(context, cookieJar, preferences, scope) { defaultUserAgentProvider() },
         )
         .build()
+
+    /**
+     * Special client for sources that require Brotli compression (e.g., AllManga).
+     * This client should ONLY be used by extensions that specifically need it.
+     * Do NOT use this as the default client.
+     */
+    val brotliSupportClient: OkHttpClient by lazy {
+        OkHttpClient.Builder()
+            .cookieJar(cookieJar)
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .callTimeout(2, TimeUnit.MINUTES)
+            .cache(
+                Cache(
+                    directory = File(context.cacheDir, "network_cache"),
+                    maxSize = 5L * 1024 * 1024,
+                ),
+            )
+            .addInterceptor(UncaughtExceptionInterceptor())
+            .addInterceptor(UserAgentInterceptor(::defaultUserAgentProvider))
+            .addInterceptor(IgnoreGzipInterceptor())
+            .addInterceptor(BrotliInterceptor)
+            .addInterceptor(FlareSolverrInterceptor(preferences))
+            .addInterceptor(
+                CloudflareInterceptor(context, cookieJar, preferences, scope) { defaultUserAgentProvider() },
+            )
+            .apply {
+                if (preferences.verboseLogging.get()) {
+                    val httpLoggingInterceptor = HttpLoggingInterceptor().apply {
+                        level = HttpLoggingInterceptor.Level.HEADERS
+                    }
+                    addNetworkInterceptor(httpLoggingInterceptor)
+                }
+            }
+            .build()
+    }
 
     /**
      * @deprecated Since extension-lib 1.5

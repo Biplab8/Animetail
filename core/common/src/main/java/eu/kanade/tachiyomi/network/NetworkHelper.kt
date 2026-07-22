@@ -37,6 +37,8 @@ class NetworkHelper(
             )
             .addInterceptor(UncaughtExceptionInterceptor())
             .addInterceptor(UserAgentInterceptor(::defaultUserAgentProvider))
+            .addInterceptor(IgnoreGzipInterceptor())
+            .addNetworkInterceptor(BrotliInterceptor)
             // TLMR -->
             .addInterceptor(FlareSolverrInterceptor(preferences))
         // <-- TLMR
@@ -119,42 +121,6 @@ class NetworkHelper(
             CloudflareInterceptor(context, cookieJar, preferences, scope) { defaultUserAgentProvider() },
         )
         .build()
-
-    /**
-     * Special client for sources that require Brotli compression (e.g., AllManga).
-     * This client should ONLY be used by extensions that specifically need it.
-     * Do NOT use this as the default client.
-     */
-    val brotliSupportClient: OkHttpClient by lazy {
-        OkHttpClient.Builder()
-            .cookieJar(cookieJar)
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .callTimeout(2, TimeUnit.MINUTES)
-            .cache(
-                Cache(
-                    directory = File(context.cacheDir, "network_cache"),
-                    maxSize = 5L * 1024 * 1024,
-                ),
-            )
-            .addInterceptor(UncaughtExceptionInterceptor())
-            .addInterceptor(UserAgentInterceptor(::defaultUserAgentProvider))
-            .addInterceptor(IgnoreGzipInterceptor())
-            .addInterceptor(BrotliInterceptor)
-            .addInterceptor(FlareSolverrInterceptor(preferences))
-            .addInterceptor(
-                CloudflareInterceptor(context, cookieJar, preferences, scope) { defaultUserAgentProvider() },
-            )
-            .apply {
-                if (preferences.verboseLogging.get()) {
-                    val httpLoggingInterceptor = HttpLoggingInterceptor().apply {
-                        level = HttpLoggingInterceptor.Level.HEADERS
-                    }
-                    addNetworkInterceptor(httpLoggingInterceptor)
-                }
-            }
-            .build()
-    }
 
     /**
      * @deprecated Since extension-lib 1.5

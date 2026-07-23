@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://aniyomi.org">
-    <img src="./.github/assets/icon.png" alt="animetail logo" title="animetail logo" width="80"/>
+    <img src="./.github/assets/icon.png" alt="animan logo" title="animan logo" width="80"/>
 </a>
 
 # Animan [App](#)
@@ -10,16 +10,16 @@
 Discover and watch anime, cartoons, series, and more – easier than ever on your Android device.
 
 [![Discord server](https://img.shields.io/discord/1196139193664028762.svg?label=&labelColor=6A7EC2&color=7389D8&logo=discord&logoColor=FFFFFF)](https://discord.gg/fvskrQZb9j)
-[![GitHub downloads](https://img.shields.io/github/downloads/Biplab8/animetail/total?label=downloads&labelColor=27303D&color=0D1117&logo=github&logoColor=FFFFFF&style=flat)](https://github.com/Biplab8/Animetail/releases)
+[![GitHub downloads](https://img.shields.io/github/downloads/Biplab8/animan/total?label=downloads&labelColor=27303D&color=0D1117&logo=github&logoColor=FFFFFF&style=flat)](https://github.com/Biplab8/Animan/releases)
 
-[![CI](https://img.shields.io/github/actions/workflow/status/Biplab8/animetail/build_push.yml?labelColor=27303D)](https://github.com/Biplab8/Animetail/actions/workflows/build_push.yml)
-[![License: Apache-2.0](https://img.shields.io/github/license/Biplab8/Animetail?labelColor=27303D&color=818cf8)](/LICENSE)
-[![Crowdin](https://badges.crowdin.net/animetail/localized.svg)](https://crowdin.com/project/animetail)
+[![CI](https://img.shields.io/github/actions/workflow/status/Biplab8/animan/build_push.yml?labelColor=27303D)](https://github.com/Biplab8/Animan/actions/workflows/build_push.yml)
+[![License: Apache-2.0](https://img.shields.io/github/license/Biplab8/Animan?labelColor=27303D&color=818cf8)](/LICENSE)
+[![Crowdin](https://badges.crowdin.net/animan/localized.svg)](https://crowdin.com/project/animan)
 
 ## Download
 
-[![Animetail Stable](https://img.shields.io/github/release/Biplab8/animetail.svg?maxAge=3600&label=Stable&labelColor=06599d&color=043b69)](https://github.com/Biplab8/Animetail/releases)
-[![Animetail Preview](https://img.shields.io/github/v/release/Biplab8/animetail-preview.svg?maxAge=3600&label=Beta&labelColor=2c2c47&color=1c1c39)](https://github.com/Biplab8/animetail-preview/releases)
+[![Animetail Stable](https://img.shields.io/github/release/Biplab8/animan.svg?maxAge=3600&label=Stable&labelColor=06599d&color=043b69)](https://github.com/Biplab8/Animan/releases)
+[![Animetail Preview](https://img.shields.io/github/v/release/Biplab8/animan-preview.svg?maxAge=3600&label=Beta&labelColor=2c2c47&color=1c1c39)](https://github.com/Biplab8/animan-preview/releases)
 
 *Requires Android 8.0 or higher.*
 
@@ -71,7 +71,7 @@ Features include:
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Before reporting a new issue, take a look at the [FAQ](https://aniyomi.org/docs/faq/general), the [changelog](https://aniyomi.org/changelogs/) and the already opened [issues](https://github.com/Animetailapp/animetail/issues); if you got any questions, join our [Discord server](https://discord.gg/F32UjdJZrR).
+Before reporting a new issue, take a look at the [FAQ](https://aniyomi.org/docs/faq/general), the [changelog](https://aniyomi.org/changelogs/) and the already opened [issues](https://github.com/Biplab8/animan/issues); if you got any questions, join our [Discord server](https://discord.gg/F32UjdJZrR).
 
 ### Repositories
 
@@ -82,8 +82,8 @@ Before reporting a new issue, take a look at the [FAQ](https://aniyomi.org/docs/
 
 Thank you to all the people who have contributed!
 
-<a href="https://github.com/Animetailapp/Animetail/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=Animetailapp/Animetail" alt="Animetail app contributors" title="Animetail app contributors" width="800"/>
+<a href="https://github.com/Biplab8/Animan/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=Biplab8/Animan" alt="Animan app contributors" title="Animan app contributors" width="800"/>
 </a>
 
 ### Disclaimer
@@ -97,6 +97,7 @@ Copyright © 2015 Javier Tomás
 Copyright © 2024 Mihon Open Source Project
 Copyright © 2024 Aniyomi Open Source Project
 Copyright © 2024 The Animetail Open Source Project
+Copyright © 2026 The Animan Open Source Project
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

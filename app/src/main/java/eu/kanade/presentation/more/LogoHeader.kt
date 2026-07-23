@@ -23,7 +23,7 @@ fun LogoHeader(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Image(
-            painter = painterResource(R.drawable.animan_logo),
+            painter = painterResource(R.mipmap.animan_logo),
             contentDescription = null,
             modifier = Modifier
                 .padding(iconPadding)

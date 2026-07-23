@@ -23,14 +23,10 @@ fun LogoHeader(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Icon(
-            painter = painterResource(R.drawable.ic_ani),
-            contentDescription = null,
-            tint = MaterialTheme.colorScheme.onSurface,
-            modifier = Modifier
-                .padding(iconPadding)
-                .size(64.dp),
-        )
+        Image(
+    painter = painterResource(R.drawable.animan_logo),
+    contentDescription = null,
+)
 
         HorizontalDivider()
     }

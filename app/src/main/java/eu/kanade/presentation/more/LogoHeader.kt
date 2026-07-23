@@ -1,13 +1,12 @@
 package eu.kanade.presentation.more
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,9 +23,12 @@ fun LogoHeader(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Image(
-    painter = painterResource(R.drawable.animan_logo),
-    contentDescription = null,
-)
+            painter = painterResource(R.drawable.animan_logo),
+            contentDescription = null,
+            modifier = Modifier
+                .padding(iconPadding)
+                .size(64.dp),
+        )
 
         HorizontalDivider()
     }

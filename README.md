@@ -14,7 +14,7 @@ Discover and watch anime, cartoons, series, and more – easier than ever on you
 
 [![CI](https://img.shields.io/github/actions/workflow/status/Biplab8/animan/build_push.yml?labelColor=27303D)](https://github.com/Biplab8/Animan/actions/workflows/build_push.yml)
 [![License: Apache-2.0](https://img.shields.io/github/license/Biplab8/Animan?labelColor=27303D&color=818cf8)](/LICENSE)
-[![Crowdin](https://badges.crowdin.net/animan/localized.svg)](https://crowdin.com/project/animan)
+[![Crowdin](https://badges.crowdin.net/animetail/localized.svg)](https://crowdin.com/project/animetail)
 
 ## Download
 

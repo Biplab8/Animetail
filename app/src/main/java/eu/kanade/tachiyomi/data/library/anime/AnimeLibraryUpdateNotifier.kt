@@ -253,7 +253,7 @@ class AnimeLibraryUpdateNotifier(
             setContentText(description)
             setStyle(NotificationCompat.BigTextStyle().bigText(description))
 
-            setSmallIcon(R.drawable.ic_ani)
+            setSmallIcon(R.mipmap.animan_logo)
 
             if (icon != null) {
                 setLargeIcon(icon)

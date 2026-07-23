@@ -10,16 +10,16 @@
 Discover and watch anime, cartoons, series, and more – easier than ever on your Android device.
 
 [![Discord server](https://img.shields.io/discord/1196139193664028762.svg?label=&labelColor=6A7EC2&color=7389D8&logo=discord&logoColor=FFFFFF)](https://discord.gg/fvskrQZb9j)
-[![GitHub downloads](https://img.shields.io/github/downloads/Animetailapp/animetail/total?label=downloads&labelColor=27303D&color=0D1117&logo=github&logoColor=FFFFFF&style=flat)](https://github.com/Animetailapp/Animetail/releases)
+[![GitHub downloads](https://img.shields.io/github/downloads/Biplab8/animetail/total?label=downloads&labelColor=27303D&color=0D1117&logo=github&logoColor=FFFFFF&style=flat)](https://github.com/Biplab8/Animetail/releases)
 
-[![CI](https://img.shields.io/github/actions/workflow/status/Animetailapp/animetail/build_push.yml?labelColor=27303D)](https://github.com/Animetailapp/Animetail/actions/workflows/build_push.yml)
-[![License: Apache-2.0](https://img.shields.io/github/license/Animetailapp/Animetail?labelColor=27303D&color=818cf8)](/LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/Biplab8/animetail/build_push.yml?labelColor=27303D)](https://github.com/Biplab8/Animetail/actions/workflows/build_push.yml)
+[![License: Apache-2.0](https://img.shields.io/github/license/Biplab8/Animetail?labelColor=27303D&color=818cf8)](/LICENSE)
 [![Crowdin](https://badges.crowdin.net/animetail/localized.svg)](https://crowdin.com/project/animetail)
 
 ## Download
 
-[![Animetail Stable](https://img.shields.io/github/release/Animetailapp/animetail.svg?maxAge=3600&label=Stable&labelColor=06599d&color=043b69)](https://github.com/Animetailapp/Animetail/releases)
-[![Animetail Preview](https://img.shields.io/github/v/release/Animetailapp/animetail-preview.svg?maxAge=3600&label=Beta&labelColor=2c2c47&color=1c1c39)](https://github.com/Animetailapp/animetail-preview/releases)
+[![Animetail Stable](https://img.shields.io/github/release/Biplab8/animetail.svg?maxAge=3600&label=Stable&labelColor=06599d&color=043b69)](https://github.com/Biplab8/Animetail/releases)
+[![Animetail Preview](https://img.shields.io/github/v/release/Biplab8/animetail-preview.svg?maxAge=3600&label=Beta&labelColor=2c2c47&color=1c1c39)](https://github.com/Biplab8/animetail-preview/releases)
 
 *Requires Android 8.0 or higher.*
 
